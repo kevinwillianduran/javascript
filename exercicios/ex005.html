@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: #40c79f;
+            color: #fff;
+            font: normal 17pt Arial;
+        }
+        strong{
+            font-style: italic;
+            color: #033123;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM DOM DOM DOM DOM</h1>
+    <p>Aqui vai o <strong>resultado</strong></p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <div id="msg2">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        corpo.style.background = '#000'
+        var p1 = window.document.getElementsByTagName('p')[0]//O primeiro parágrafo é 0
+        document.write(`Está escrito isso: ${p1.innerHTML}<br>`)// já vem com as configurações: EX: tag strong e cores do CSS      
+        p1.style.color = 'blue'
+        document.write(`Está escrito isso: ${p1.innerText}`)// não vem com modificações igual a innerHTML
+
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou no aguardo...' // a DIV original está com outra mensagem, mas consigo muda-lá com js
+
+        var e = document.querySelector('div#msg2')
+        e.style.color = 'red'
+
+    </script>
+</body>
+</html>
